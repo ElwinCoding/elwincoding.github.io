@@ -1,4 +1,52 @@
 <!DOCTYPE html>
+
+<style>
+    .youtube{
+        background-color: rgb(200, 0, 0);
+        color: white;
+        border: none;
+        height: 36px;
+        width: 100px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: opacity 0.15s;
+    }
+
+    .youtube:hover{
+        opacity: 0.75;
+    }
+
+    .youtube:active{
+        opacity: 0.5;
+    }
+
+    .join{
+        background-color: white;
+        border-color: rgb(0, 157, 255);
+        border-style: solid;
+        border-width: 1px;
+        color: rgb(0, 157, 255);
+        cursor: pointer;
+    }
+
+    .tweet{
+        font-weight: bold;
+        font-size: 15px;
+        transition: box-shadow 0.15s;
+    }
+
+    .tweet:hover{
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .intro{
+        font-weight: bold;
+        font-size: 50px;
+        margin-block: 10px;
+    }
+</style>
+
 <html>
     <head>
         <title>Welcome!</title>
@@ -10,6 +58,10 @@
     </head>
 
     <body>
-        Welcome. I am Elwin!
+        <p>Welcome, my name is Elwin.</p>
+        <p class="intro">I am a software engineer</p>
+        <button class="youtube">Youtube</button> 
+        <button class="join">JOIN</button>
+        <button class="tweet">Tweet</button>
     </body>
 </html>
