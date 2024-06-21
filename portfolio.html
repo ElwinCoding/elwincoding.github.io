@@ -1,67 +1,51 @@
 <!DOCTYPE html>
 
-<style>
-    .youtube{
-        background-color: rgb(200, 0, 0);
-        color: white;
-        border: none;
-        height: 36px;
-        width: 100px;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-right: 10px;
-        transition: opacity 0.15s;
-    }
-
-    .youtube:hover{
-        opacity: 0.75;
-    }
-
-    .youtube:active{
-        opacity: 0.5;
-    }
-
-    .join{
-        background-color: white;
-        border-color: rgb(0, 157, 255);
-        border-style: solid;
-        border-width: 1px;
-        color: rgb(0, 157, 255);
-        cursor: pointer;
-    }
-
-    .tweet{
-        font-weight: bold;
-        font-size: 15px;
-        transition: box-shadow 0.15s;
-    }
-
-    .tweet:hover{
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
-    }
-
-    .intro{
-        font-weight: bold;
-        font-size: 50px;
-        margin-block: 10px;
-    }
-</style>
-
 <html>
     <head>
-        <title>Welcome!</title>
+        <title>guh!</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <p>Welcome, my name is Elwin.</p>
-        <p class="intro">I am a software engineer</p>
+        <div class="page-layout">
+            <div class="introduction-div">
+                <div class="portrait-container">
+                    <img class="portrait" src="/images/placeholder.png">
+                </div>
+                <div class="text-div">
+                    <p class="intro">
+                        <span>Hello &#128075;</span> 
+                        <span>my name is <strong>Elwin</strong>.</span> 
+                        <span> <br>I am a</span>
+                        <span class="cycle"></span>
+                    </p>
+                </div>
+            </div>
+            
+        <p class="section-title">Projects</p>
+
+        <p class="section-title">About Me</p>
+
+
         <button class="youtube">Youtube</button> 
         <button class="join">JOIN</button>
         <button class="tweet">Tweet</button>
+
+        <p class="apple-text">
+            Shop early for the best selection of holiday favorites. <span class="shop">Shop now</span> &#62;
+        </p>
+
+        
+
+        </div>
     </body>
 </html>

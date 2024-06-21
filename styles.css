@@ -1,0 +1,148 @@
+body{
+    background-color: #fefae0;
+}
+
+p{
+    color: #283618;
+    font-family: "Roboto";
+}
+
+img{
+    border: 15px double #dda15e;
+    border-radius: 15px;
+}
+
+.page-layout{
+    display: grid;
+    row-gap: 50px;
+}
+
+.introduction-div{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    column-gap: 45px;
+}
+
+.portrait-container{
+    flex: 1;
+}
+
+.portrait{
+    flex: 1;
+    object-fit: fill;
+    height: auto;
+    width: 100%;
+}
+
+.text-div{
+    flex: 1;
+}
+
+.intro{
+    font-size: 3.5vw;
+    line-height: 2;
+}
+.intro span{
+    opacity: 0;
+    animation: fadeIn ease 3s;
+    animation-fill-mode: forwards;
+}
+.intro span:nth-of-type(2){
+    animation-delay: 1s;
+}
+.intro span:nth-of-type(3){
+    animation-delay: 2s;
+}
+.intro span:nth-of-type(4){
+    animation-delay: 2.5s;
+}
+@keyframes fadeIn{
+    100% {
+        opacity: 1;
+    }
+}
+
+.cycle:after{
+    animation-name: cycle;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    content: "";
+    color: #bc4749;
+}
+
+@keyframes cycle{
+    0% {
+        content: "Challenge Seeker";
+    }
+    50% {
+        content: "Software Engineer";
+    }
+    100% {
+        content: "guh";
+    }
+}
+
+.section-title{
+    font-size: 70px;
+    font-style: bold;
+}
+.youtube{
+    background-color: rgb(200, 0, 0);
+    color: white;
+    border: none;
+    height: 36px;
+    width: 100px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: opacity 0.15s;
+    display: block;
+}
+
+.youtube:hover{
+    opacity: 0.75;
+}
+
+.youtube:active{
+    opacity: 0.5;
+}
+
+.join{
+    background-color: white;
+    border-color: rgb(0, 157, 255);
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(0, 157, 255);
+    cursor: pointer;
+}
+
+.tweet{
+    font-weight: bold;
+    font-size: 15px;
+    transition: box-shadow 0.15s;
+}
+
+.tweet:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.apple-text{
+    margin-bottom: 50px;
+    font-size: 14px;
+    font-family: Arial;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.shop:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
