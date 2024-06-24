@@ -9,17 +9,18 @@ p{
 
 img{
     border: 15px double #dda15e;
-    border-radius: 40px;
+    border-radius: 4vh;
 }
 
 .page-layout{
     display: grid;
-    row-gap: 50px;
+    row-gap: 5vh;
 }
 
 .section-title{
-    font-size: 70px;
+    font-size: 7vh;
     font-weight: 500;
+    margin-left: 1.5vw;
 }
 
 .introduction-div{
@@ -56,10 +57,11 @@ img{
         display: flex;
         flex-direction: row;
         height: 30vh;
+        margin-top: 2vh;
     }
 
     .project-image-container{
-        flex-grow: 1;
+        flex-basis: 22%;
         justify-content: center;
     }
 
@@ -69,24 +71,28 @@ img{
         margin-right: auto;
         width: auto;
         height: 80%;
+        border-width: 3vh;
     }
 
     .project-text-container{
-        flex-grow: 4;
+        margin-left: -1vw;
     }
 
-    .project-name {
-        font-size: 3vh;
-        margin-top: 0;
+    .project-text-container a{
+        font-size: 3.5vh;
+        font-family: "roboto";
+        font-weight: 500;
     }
 
     .project-description{
-        font-size: 2vh;
         margin-top: 0;
+        font-size: 2.3vh;
     }
 
     .project-entry ul{
         padding-left: 0;
+        font-size: 2.2vh;
+        font-family: "Roboto";
     }
         .project-entry li{
             list-style-position: inside;
@@ -114,7 +120,7 @@ img{
     }
 
 .slidingVertical span{
-    animation: topToBottom 12.6s linear infinite 0s;
+    animation: topToBottom 12.5s linear infinite 0s;
     animation-delay: 1s;
     opacity: 0;
     overflow: hidden;
@@ -124,83 +130,25 @@ img{
     color: #0077b6;
 }
     .slidingVertical span:nth-child(2){
-        animation-delay: 3.6s;
+        animation-delay: 3.5s;
     }
     .slidingVertical span:nth-child(3){
-        animation-delay: 6.1s;
+        animation-delay: 6s;
     }
     .slidingVertical span:nth-child(4){
-        animation-delay: 8.6s;
+        animation-delay: 8.5s;
     }
     .slidingVertical span:nth-child(5){
-        animation-delay: 11.1s;
+        animation-delay: 11s;
     }
+
     @keyframes topToBottom{
         0% {opacity: 0;}
-        5% {opacity: 0; transform: translateY(-50px);}
+        5% {opacity: 0; transform: translateY(-8vh);}
         10% {opacity: 1; transform: translateY(0px);}
         25% {opacity: 1; transform: translateY(0px);}
-        30% {opacity: 0; transform: translateY(50px);}
+        30% {opacity: 0; transform: translateY(8vh);}
         80% {opacity: 0;}
         100% {opacity: 0;}
     }
 
-
-
-.youtube{
-    background-color: rgb(200, 0, 0);
-    color: white;
-    border: none;
-    height: 36px;
-    width: 100px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: opacity 0.15s;
-    display: block;
-}
-
-.youtube:hover{
-    opacity: 0.75;
-}
-
-.youtube:active{
-    opacity: 0.5;
-}
-
-.join{
-    background-color: white;
-    border-color: rgb(0, 157, 255);
-    border-style: solid;
-    border-width: 1px;
-    color: rgb(0, 157, 255);
-    cursor: pointer;
-}
-
-.tweet{
-    font-weight: bold;
-    font-size: 15px;
-    transition: box-shadow 0.15s;
-}
-
-.tweet:hover{
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
-}
-
-
-
-.apple-text{
-    margin-bottom: 50px;
-    font-size: 14px;
-    font-family: Arial;
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-.shop:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
