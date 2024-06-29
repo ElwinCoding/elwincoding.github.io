@@ -1,26 +1,88 @@
-body{
-    background-color: #fefae0;
+html{
+    scroll-behavior: smooth;
 }
 
-p{
+body{
+    background-color: #fefae0;
+    margin: 0;
     color: #283618;
-    font-family: "Roboto";
+    font-family: "roboto";
 }
+
 
 img{
     border: 15px double #dda15e;
     border-radius: 4vh;
 }
 
+header{
+    background-color: red;
+}
+
+a:visited{
+    color: inherit;
+}
+
+#navbar {
+    background-color: #dda15e;
+    height: 5vh;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    animation: slideIn 5s ease forwards;
+}
+
+    #navbar ul{
+        width: inherit;
+        padding: 0;
+        list-style-type: none;
+        overflow: hidden;
+    }
+
+    #navbar li{
+        font-size: 1vw;
+        float: right;
+        color: #fefae0;
+    }
+
+    #navbar a{
+        padding: 0.5rem;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+    }
+
+    #navbar a.active{
+        background-color: #b4834c;
+        border-radius: 10px;
+    }
+
+    @keyframes slideIn{
+        100%{
+            top:0;
+        }
+    }
+
 .page-layout{
     display: grid;
     row-gap: 5vh;
+    margin: 1rem;
 }
 
 .section-title{
     font-size: 7vh;
     font-weight: 500;
-    margin-left: 1.5vw;
+    margin-left: 2rem;
+}
+
+.anchor{
+    display: block;
+    position: relative;
+    top: 6vh;
+    visibility: hidden;
 }
 
 .introduction-div{
@@ -29,7 +91,8 @@ img{
     height: 100vh;
     justify-content: center;
     align-items: center;
-    column-gap: 60px;
+    column-gap: 5rem;
+    margin-top: 2vh;
 }
 
 .equal-flex{
@@ -74,13 +137,8 @@ img{
         border-width: 3vh;
     }
 
-    .project-text-container{
-        margin-left: -1vw;
-    }
-
     .project-text-container a{
         font-size: 3.5vh;
-        font-family: "roboto";
         font-weight: 500;
     }
 
@@ -92,7 +150,6 @@ img{
     .project-entry ul{
         padding-left: 0;
         font-size: 2.2vh;
-        font-family: "Roboto";
     }
         .project-entry li{
             list-style-position: inside;
@@ -101,8 +158,7 @@ img{
 
 .intro span{
     opacity: 0;
-    animation: fadeIn ease 3s;
-    animation-fill-mode: forwards;
+    animation: fadeIn ease 3s forwards;
 }
     .intro span:nth-of-type(2){
         animation-delay: 1s;
