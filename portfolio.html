@@ -13,27 +13,24 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/8518d1f56d.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
 
-
-        </div>
-        <nav id="navbar">
+        <nav id="navbar"> 
             <ul>
                 <li><a href="#home">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#intro" class="active">Introduction</a></li>
+                <li><a href="#contact" class="section">Contact</a></li>
+                <li><a href="#about" class="section">About Me</a></li>
+                <li><a href="#projects" class="section">Projects</a></li>
+                <li><a href="#intro" class="section active">Welcome</a></li>
             </ul>    
-                
         </nav>
 
-        
         <div class="page-layout">
-            
-            <!--Introduction screen-->
+            <!--Introduction section-->
+            <a class="anchor" id="intro"></a>
             <div class="introduction-div">
                 <div class="portrait-container">
                     <img class="portrait" src="/images/placeholder.png">
@@ -54,8 +51,6 @@
                 </div>
             </div>
 
-            <button class="js-projects">button</button>
-
             <!--Project Section-->
             <a class="anchor" id="projects"></a>
             <p class="section-title">Projects</p>
@@ -72,7 +67,7 @@
                         <li>many features included</li>
                     </ul>
                 </div>
-            </div>
+            </div> 
             
             <div class="project-entry">
                 <div class="project-image-container">
@@ -107,12 +102,29 @@
             <!--About Me section-->
             <a class="anchor" id="about"></a>
             <p class="section-title">About Me</p>
-            
-
-            <div class="">
-
+            <div class="about-me">
+                <p>Welcome to my website!</p>
+                <div class="slideshow-container">
+                    <div class="slideshow-image fade">
+                        <img src="pictures/climbing.jpg">
+                    </div>
+                    <div class="slideshow-image fade">
+                        <img src="pictures/garibaldi.JPG">
+                    </div>
+                    <div class="slideshow-image fade">
+                        <img src="pictures/ski.jpg">
+                    </div>
+                </div>
             </div>
+        
 
+        </div>
+            
+        <a class="anchor" id="contact"></a>
+        <div class="contacts">
+            <a href="https://www.linkedin.com/in/elwin-shen-link/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:elwin1@ualberta.ca" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://github.com/ElwinCoding" target="_blank"><i class="fa-brands fa-github"></i></a>
         </div>
         <script type="text/javascript" src="scripts.js"></script>
     </body>
