@@ -29,6 +29,7 @@ function setupNav() {
         });
     });
 
+    /*
     const sections = document.querySelectorAll(".anchor");
     const menu_links = document.querySelectorAll("nav .section");
 
@@ -48,7 +49,8 @@ function setupNav() {
           makeActive(current);
         }
       });
-    /*
+      */
+    
     (function() {
         'use strict';
       
@@ -61,7 +63,6 @@ function setupNav() {
         });
       
         window.onscroll = function() {
-            console.log("fuck me")
             var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
       
             for (i in sections) {
@@ -72,7 +73,7 @@ function setupNav() {
           }
         };
       })();
-      */
+      
 
     // scroll event
 

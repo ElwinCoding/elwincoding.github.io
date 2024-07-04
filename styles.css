@@ -223,19 +223,38 @@ a:hover{
 
 .about-me{
     display: flex;
+    flex-direction: row;
     height: 65vh;
     background-color: green;
     align-items: center;
     justify-content: center;
+    gap: 60px;
 }
+
+    .empty{
+        width: auto;
+        flex: 1;
+    }
+
+    .about-text-container{
+        flex: 2;
+    }
+
+    .about-text-container p{
+        flex: 2;
+        text-align: justify;
+        font-size: 3vh;
+    }
+
     .slideshow-container{
         flex-basis: 20%;
-        width: 80%;
+        width: 90%;
         border: 15px double #dda15e;
         border-radius: 4vh;
         height: 80%;
         z-index: 1;
         overflow: hidden;
+        margin-right: 30px;
     }
     .slideshow-image img{
         object-fit: cover;
