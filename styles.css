@@ -247,30 +247,30 @@ a:hover{
     }
 
     .slideshow-container{
-        flex-basis: 20%;
-        width: 90%;
+        position: relative;
+        flex-basis: 25%;
+        width: 80%;
         border: 15px double #dda15e;
         border-radius: 4vh;
-        height: 80%;
+        height: 70%;
         z-index: 1;
         overflow: hidden;
-        margin-right: 30px;
+        margin-right: 50px;
     }
-    .slideshow-image img{
+
+    .slideshow-container .slideshow-image{
+        position: absolute;
         object-fit: cover;
         height: auto;
         width: 100%;
         border: none;
         border-radius: 0;
+        opacity: 0;
+        transition: all 2s ease-in-out;
     }
 
-    .fade {
-        animation: fade 4s ease;
-    }
-
-    @keyframes fade{
-        0%, 100% {opacity: 0;}
-        50% {opacity: 1;}
+    .slideshow-container .active{
+        opacity: 1;
     }
 
 

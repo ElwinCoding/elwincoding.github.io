@@ -1,33 +1,74 @@
-document.addEventListener("DOMContentLoaded", setupNav)
+document.addEventListener("DOMContentLoaded", pageSetup)
 
-let slideIndex = 0;
-//showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("slideshow-image");
-  console.log(slides)
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change image every 2 seconds
+function pageSetup() {
+  crossFade();
+  scrollSpy();
 }
+
+function crossFade() {
+  let slideshow = document.querySelectorAll(".slideshow-image");
+  let image = slideshow[0];
+
+  // use interval timer to change photos
+  setInterval(() => {
+    image.classList.remove("active");
+    if(image.nextElementSibling == null){
+      image = slideshow[0];
+    }
+    else{
+      image = image.nextElementSibling;
+    }
+      image.classList.add("active");
+  }, 5000);
+}
+
+function scrollSpy(){
+  const navSections = document.querySelectorAll("nav .section");
+  let scrolling = true;
+
+  // clicking the navbar
+  navSections.forEach(section => {
+    section.onclick = () => {
+      scrolling = false;
+      navSections.forEach(prev => prev.classList.remove("active"));
+      section.classList.add("active");
+      scrolling = true;
+    }
+  });
+
+  // scrolling the window
+  let anchors = document.querySelectorAll(".anchor");
+  sections = {};
+  anchors.forEach(anchor => {
+    sections[anchor.id] = anchor.offsetTop;
+  })
+
+  window.onscroll = (throttle(() => {
+    if(!scrolling) {
+      return
+    }
+    let scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    console.log(scrollPosition);
+
+  },400))
+ 
+}
+
+function throttle(func, delay) {
+  let timer = null;
+  return () => {
+    if(!timer) {
+      func();
+      timer = setTimeout(() => {
+        timer = null;
+      }, delay);
+    }
+  };
+}
+
 
 function setupNav() {
     const navSection = document.querySelectorAll("nav .section");
-
-    // click event
-    navSection.forEach(v => {
-        v.onclick = (() => {
-                setTimeout(() => {
-                    navSection.forEach(j => j.classList.remove("active"));
-                    v.classList.add("active");
-            }, 300);
-        });
-    });
 
     /*
     const sections = document.querySelectorAll(".anchor");
