@@ -24,34 +24,51 @@ function crossFade() {
 
 function scrollSpy(){
   const navSections = document.querySelectorAll("nav .section");
-  let scrolling = true;
+  let activeSection = document.querySelector("nav .active");
+  let disableScroll = false;
 
   // clicking the navbar
   navSections.forEach(section => {
     section.onclick = () => {
-      scrolling = false;
+      disableScroll = true;
       navSections.forEach(prev => prev.classList.remove("active"));
       section.classList.add("active");
-      scrolling = true;
+      activeSection = section;
+      setTimeout(() => {
+        disableScroll = false;
+      }, 500);
     }
   });
 
   // scrolling the window
   let anchors = document.querySelectorAll(".anchor");
-  sections = {};
+  let sections = {};
   anchors.forEach(anchor => {
     sections[anchor.id] = anchor.offsetTop;
   })
 
   window.onscroll = (throttle(() => {
-    if(!scrolling) {
-      return
+    // check if navigation triggered scroll
+    if(disableScroll) {
+      return;
     }
-    let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    console.log(scrollPosition);
 
-  },400))
- 
+    // find section user is in
+    let scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    let currentSection = null;
+    for(i in sections) {
+      if(sections[i] <= scrollPosition) {
+        currentSection = document.querySelector('a[href*=' + i + ']');
+      }
+    }
+    
+    // change section
+    if(activeSection != currentSection && currentSection != null){
+      activeSection.classList.remove("active");
+      currentSection.classList.add("active");
+      activeSection = currentSection;
+    }
+  },500))
 }
 
 function throttle(func, delay) {
@@ -65,77 +82,3 @@ function throttle(func, delay) {
     }
   };
 }
-
-
-function setupNav() {
-    const navSection = document.querySelectorAll("nav .section");
-
-    /*
-    const sections = document.querySelectorAll(".anchor");
-    const menu_links = document.querySelectorAll("nav .section");
-
-    const makeActive = (link) => menu_links[link].classList.add("active");
-    const removeActive = (link) => menu_links[link].classList.remove("active");
-    const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
-
-    const sectionMargin = 200;
-    let currentActive = 0;
-
-    window.addEventListener("scroll", () => {
-        const current = sections.length - [...sections].findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
-      
-        if (current !== currentActive) {
-          removeAllActive();
-          currentActive = current;
-          makeActive(current);
-        }
-      });
-      */
-    
-    (function() {
-        'use strict';
-      
-        var section = document.querySelectorAll(".anchor");
-        var sections = {};
-        var i = 0;
-      
-        Array.prototype.forEach.call(section, function(e) {
-          sections[e.id] = e.offsetTop;
-        });
-      
-        window.onscroll = function() {
-            var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-      
-            for (i in sections) {
-                if (sections[i] <= scrollPosition) {
-                document.querySelector('.active').setAttribute('class', ' ');
-                document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
-            }
-          }
-        };
-      })();
-      
-
-    // scroll event
-
-    /*
-    window.onscroll = (() => {
-        let bodySection = document.querySelectorAll("body .anchor");
-
-        bodySection.forEach((v, i) => {
-            let rect = v.getBoundingClientRect().y;
-            console.log(rect);
-            console.log("window"+ window.innerHeight);
-            if (rect < window.innerHeight - 500) {
-                navSection.forEach(v => v.classList.remove("active"));
-                navSection[(3-i)].classList.add("active");
-            }
-        })
-    })
-    */
-}
-
-/*
-            console.log("rect:"+ rect);
-            console.log("window:" + window.innerHeight);
-*/
