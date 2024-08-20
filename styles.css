@@ -11,7 +11,7 @@ body{
 
 
 img{
-    border: 15px double #dda15e;
+    border: 15px double #69385C;
     border-radius: 4vh;
 }
 
@@ -91,6 +91,8 @@ a:hover{
     font-size: 7vh;
     font-weight: 500;
     margin-left: 2rem;
+    margin-top: -2rem;
+    margin-bottom: -0.5rem;
 }
 
 .introduction-div{
@@ -99,7 +101,6 @@ a:hover{
     height: 100vh;
     justify-content: center;
     align-items: center;
-    column-gap: 5rem;
     margin-top: 2vh;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -111,13 +112,15 @@ a:hover{
 
 .portrait-container{
     flex: 1;
+    justify-content: center;
+    display: flex;
 }
 
 .portrait{
-    flex: 1;
     object-fit: fill;
     height: auto;
-    width: 100%;
+    width: 50%;
+    border-width: 3vh;
 }
 
 .intro{
@@ -221,15 +224,24 @@ a:hover{
             list-style-position: inside;
         }
 
+
 .about-me{
     display: flex;
     flex-direction: row;
-    height: 65vh;
-    background-color: green;
+    height: 70vh;
     align-items: center;
     justify-content: center;
     gap: 60px;
+    background-image: url("pictures/hatless_valley_crop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
+    .tint{
+        background-blend-mode: multiply;
+        background-color: #838174;
+    }
 
     .empty{
         width: auto;
@@ -244,29 +256,50 @@ a:hover{
         flex: 2;
         text-align: justify;
         font-size: 3vh;
+        color:  #fefae0;
+        text-shadow: 0px 0px 10px black;
+        line-height: 1.3;
+        margin: 3rem;
     }
 
     .slideshow-container{
         position: relative;
         flex-basis: 25%;
         width: 80%;
-        border: 15px double #dda15e;
+        border: 15px double #69385C;
         border-radius: 4vh;
         height: 70%;
         z-index: 1;
-        overflow: hidden;
         margin-right: 50px;
+        overflow: hidden;
     }
 
     .slideshow-container .slideshow-image{
-        position: absolute;
-        object-fit: cover;
-        height: auto;
-        width: 100%;
+        position: absolute;    
         border: none;
         border-radius: 0;
         opacity: 0;
         transition: all 2s ease-in-out;
+    }
+
+    .slideshow-container .fit1{
+        object-fit: contain;
+        height: 100%;
+        width: auto;
+    }
+
+    .slideshow-container .fit2{
+        object-fit: contain;
+        width: 100%;
+        height: auto;
+        top: -20%;
+    }
+
+    .slideshow-container .fit3{
+        object-fit: contain;
+        width: 100%;
+        height: auto;
+        top: -25%;
     }
 
     .slideshow-container .active{
@@ -274,13 +307,11 @@ a:hover{
     }
 
 
-
-
 .contacts{
     display: flex;
-    background-color: #fefae0;
+    background-color: #dda15e;
     width: 100%;
-    height: 10vh;
+    height: 5vh;
     justify-content: center;
     align-items: center;
     gap: 60px;
@@ -288,5 +319,10 @@ a:hover{
 
 .contacts a{
     font-size: 3vh;
+    color: #fefae0;
 }
+
+    .contacts a:hover{
+        color: #b4834c;
+    }
 
