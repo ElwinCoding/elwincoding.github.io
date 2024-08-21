@@ -68,7 +68,7 @@ function scrollSpy(){
       currentSection.classList.add("active");
       activeSection = currentSection;
     }
-  },300))
+  },400))
 }
 
 function throttle(func, delay) {
