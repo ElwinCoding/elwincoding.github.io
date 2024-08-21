@@ -53,6 +53,7 @@ a:hover{
     #navbar li{
         font-size: 1vw;
         float: right;
+        padding-right: 0.5rem;
     }
 
     #navbar a{
@@ -202,7 +203,7 @@ a:hover{
     }
 
     .project-text-container a{
-        font-size: 3.5vh;
+        font-size: 3vh;
         font-weight: 500;
         color: #283618;
     }
@@ -211,7 +212,7 @@ a:hover{
         }
 
     .project-description{
-        margin-top: 0;
+        margin-top: 0.5rem;
         font-size: 2.5vh;
     }
 
